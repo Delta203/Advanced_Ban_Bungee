@@ -1,0 +1,22 @@
+# Advanced Ban
+# Plugin by Delta203
+# v1.2 BungeeCord
+
+name: Advanced_Ban_Bungee
+version: 1.2
+author: Delta203
+
+main: de.ab.delta203.bungee.AdvancedBanMain
+
+# permissions:
+# - ab.tempmute
+# - ab.mute
+# - ab.unmute
+
+# - ab.tempban
+# - ab.ban
+# - ab.unban
+
+# - ab.cantbereported
+# - ab.check
+# - ab.panel

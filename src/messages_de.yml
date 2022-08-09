@@ -1,0 +1,152 @@
+# Advanced Ban
+# Plugin by Delta203
+# v1.2 BungeeCord
+
+prefix: '§f[§c§l✸§r§f] §3'
+# startup
+load_plugin: '...lade Advanced Ban'
+loaded_plugin: '§aAdvanced Ban wurde erfolgreich geladen'
+register_configs: 'Config erfolgreich registriert'
+connect_mysql: 'MySQl erfolgreich registriert'
+register_tables: 'MySQl Tabellen erfolgreich registriert'
+command_query_started: 'Command Query ist gestartet'
+
+# general
+# placeholders
+#   %player% : Playername
+no_perm: '§cYou do not have permission to execute this command!'
+player_not_online: '§cDer Spieler %player% ist nicht online!'
+player_not_registered: '§cDer Spieler %player% ist nicht registriert!'
+you_cant_be_target: '§cDu kannst nicht die Zielperson sein.'
+you_must_be_a_player: '§cDu musst ein Spieler sein.'
+
+# Chatlog
+# placeholders
+#   %player% : Playername
+#   %command% : Command
+cl_player_connect: '<b>%player% joined the game</b>'
+cl_player_disconnect: '<b>%player% left the game</b>'
+cl_command: '<i>%command%</i>'
+
+# Report
+# placeholders
+#   %player% : Playername
+#   %reason% : Reason
+#   %reportscount% : Amount of open reports
+report_help:
+  title: '§3Report Management'
+  1: '§b/report §e<name> §7Reporte einen Spieler'
+  2: '§b/report templates §7Zeigt alle verfügbaren Templates'
+report_templates:
+  title: '§3Templates'
+  prefix: '§8- '
+  list:
+    - '§6Hacking'
+    - '§6Chat'
+    - '§6Bugusing'
+    - '§6Teaming'
+    - '§6Building'
+    - '§6Trolling'
+    - '§6Skin'
+    - '§6Name'
+report_target_cant_be_reported: '§cDu kannst den Spieler %player% nicht reporten.'
+report_target_already_reported: '§cDu hast %player% bereits reportet.'
+report_reason_doesnt_exist: '§cDer Grund existiert nicht!'
+report_player:
+  title: '§3Reporte den Spieler §e%player%'
+  reason: '§bGrund:'
+  format: '§8[%reason%§8]'
+  hover: '§6Klick um §e%player% §6zu reporten'
+report_confirm:
+  title: '§3Reporte den Spieler §e%player%'
+  info: '§bDu willst §e%player%§b für %reason%§b melden. Bitte bestätige deinen Report und beachte, dass fehlerhafte Reports Konsequenzen haben werden.'
+  confirm: '§8[§a§lBestätigen§8]'
+  hover: '§6Bestätige den Report gegen §e%player%'
+report_cant_be_confirmed: '§cDu kannst den Report nicht bestätigen!'
+report_confirmed: '§aDu hast den Spieler §e%player% §aerfolgreich gemeldet. Vielen Dank für deine Unterstützung!'
+report_notify_others: '§9Es gibt offene Reports §8(§e%reportscount%§8) §7=> §3/abpanel'
+report_chatfilter: '§6Chat' #has to be a report template
+
+# Check
+# placeholders
+#   %player% : Playername
+#   %server% : Current server
+#   %name% : Banned/muted from name
+#   %reason% : Reason
+#   %duration% : Duration
+check:
+  title: '§3Überprüfe den Spieler §e%player%'
+  is_online_yes: '§bIst online: §aJa §8[%server%]'
+  is_online_no: '§bIst online: §cNein'
+  banned_yes: '§bGebannt§7: §aJa'
+  banned_no: '§bGebannt§7: §cNein'
+  banned_from: '§7└ §bVon§7: %name%'
+  banned_reason: '§7└ §bGrund§7: §6%reason%'
+  banned_duration: '§7└ §bDauer§7: §6%duration%'
+  muted_yes: '§bMuted§7: §aJa'
+  muted_no: '§bMuted§7: §cNein'
+  muted_from: '§7└ §bVon§7: %name%'
+  muted_reason: '§7└ §bGrund§7: §6%reason%'
+  muted_duration: '§7└ §bDauer§7: §6%duration%'
+
+# Ban and Mute
+# placeholders
+#   %player% : Playername
+#   %from% : Banned/muted from name
+#   %reason% : Reason
+#   %duration% : Duration
+BanUnit:
+  seconds:
+    name: 'Sekunde(n)'
+    alias: 'sec'
+  minutes:
+    name: 'Minute(n)'
+    alias: 'min'
+  hours:
+    name: 'Stunde(n)'
+    alias: 'hour'
+  days:
+    name: 'Tag(e)'
+    alias: 'day'
+  permanent:
+    name: '§4PERMANENT'
+bm_help:
+  title: '§3Ban and Mute Management'
+  1: '§b/ban §e<name> §b<reason> §7Bann einen Spieler'
+  2: '§b/tempban §e<name> §b<value> <unit§8(sec,min,hour,day)§b> <reason> §7Bann einen Spieler temporär'
+  3: '§b/mute §e<name> §b<reason> §7Mute einen Spieler'
+  4: '§b/tempmute §e<name> §b<value> <unit§8(sec,min,hour,day)§b> <reason> §7Mute einen Spieler temporär'
+  5: '§b/unban §e<name> §7Entbanne einen Spieler'
+  6: '§b/unmute §e<name> §7Entmute einen Spieler'
+  7: '§b/check §e<name> §7Überprüfe einen Spieler'
+  8: '§9/abpanel §7Öffne das Webpanel'
+bm_target_already_banned_muted: '§cDer Spieler %player% ist bereits gebannt oder gemutet.'
+bm_target_is_not_banned_muted: '§cDer Spieler %player% ist nicht gebannt oder gemutet.'
+bm_value_must_be_number: '§cDer Wert muss eine Nummer sein.'
+bm_value_to_high: '§cDer Wert ist zu hoch.'
+bm_wrong_unit: '§cDie Einheit muss sec, min, hour oder day sein.'
+mute_success:
+  sender: '§aDu hast den Spieler §e%player% §aerfolgreich gemutet!'
+  all: '§3Der Spieler §e%player% §3wurde von §b%from% §3gemutet. Dauer: §6%duration%'
+unmute_success:
+  sender: '§aDu hast den Spieler §e%player% §aerfolgreich entmutet!'
+  all: '§3Der Spieler §e%player% §3wurde von §b%from% §3entmutet.'
+ban_success:
+  sender: '§aDu hast den Spieler §e%player% §aerfolgreich gebannt!'
+  all: '§3Der Spieler §e%player% §3wurde von §b%from% §3gebannt. Dauer: §6%duration%'
+unban_success:
+  sender: '§aDu hast den Spieler §e%player% §aerfolgreich entbannt!'
+  all: '§3Der Spieler §e%player% §3wurde von §b%from% §3entbannt.'
+you_are_muted: '§cDu wurdest vom Chat gebannt. Grund§7: §6%reason%§cDauer§7: §6%duration%'
+you_are_banned:
+  kick: '§cDu wurdest gebannt.$n§cGrund§7: §6%reason%'
+  login: '§cDu wurdest gebannt.$n$n§cGrund§7: §6%reason%$n§cDauer§7: §6%duration%'
+  login_ipban: '§cDu wurdest gebannt.$n$n§cGrund§7: §6Gebannt mit einem anderen Account$n§cDauer§7: §4PERMANENT'
+
+# Panel
+#   %loginkey% : Loginkey
+panel:
+  title: '§3Ban and Mute Management'
+  info: '§6Hier kannst du alle Reports, Bans und Mutes verwalten. Benutze den Link, um dich einzuloggen.'
+  link: '§ehttp://localhost/?key=%loginkey%'
+  linkraw: 'http://localhost/?key=%loginkey%'

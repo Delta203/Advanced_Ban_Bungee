@@ -1,0 +1,22 @@
+# Advanced Ban
+# Plugin by Delta203
+# v1.2 BungeeCord
+
+# MySQl connection
+MySQl_url: 'localhost'
+MySQl_port: 3306
+MySQl_database: 'test'
+MySQl_user: 'root'
+MySQl_password: ''
+
+# Inform other team members about bans and mutes
+notify_mute: true
+notify_ban: true
+notify_report: true
+
+max_temp_value: 500
+
+# Command query fetch every x seconds
+command_query:
+  enabled: true
+  delay: 10
