@@ -28,7 +28,7 @@ public class Listener_ChatLog implements Listener {
 					
 					/* Chat blacklist check */
 					for(String blackwords : ChatFilterYML.get().getStringList("blacklist")) {
-						if(e.getMessage().contains(blackwords)) {
+						if(e.getMessage().toLowerCase().contains(blackwords)) {
 							BungeeCord.getInstance().pluginManager.dispatchCommand(BungeeCord.getInstance().getConsole(), "report " + p.getName() + " " + MessagesYML.get().getString("report_chatfilter"));
 							BungeeCord.getInstance().pluginManager.dispatchCommand(BungeeCord.getInstance().getConsole(), "report $confirm");
 							return;

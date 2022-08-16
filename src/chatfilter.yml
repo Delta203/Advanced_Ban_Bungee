@@ -1,7 +1,8 @@
 # Advanced Ban
 # Plugin by Delta203
-# v1.2 BungeeCord
+# v1.2.2 BungeeCord
 
+# words have to be written in lowercase
 blacklist:
   #domains:
   - '.at'
@@ -30,3 +31,7 @@ blacklist:
   - 'fuck'
   - 'ass'
   - 'idiot'
+  - 'shit'
+  - 'whore'
+  - 'nigga'
+  - 'cunt'
