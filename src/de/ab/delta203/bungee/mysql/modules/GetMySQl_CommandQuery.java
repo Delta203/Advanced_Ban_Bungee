@@ -33,6 +33,11 @@ public class GetMySQl_CommandQuery {
 	}
 	
 	public static void proceedCommand(String senderuuid, String command) {
+		if(senderuuid.equalsIgnoreCase("Console")) {
+			BungeeCord.getInstance().pluginManager.dispatchCommand(BungeeCord.getInstance().getConsole(), command);
+			return;
+		}
+		
 		UUID uuid = UUID.fromString("00000000-0000-0000-0000-000000000000");
 		try {
 			uuid = UUID.fromString(senderuuid);

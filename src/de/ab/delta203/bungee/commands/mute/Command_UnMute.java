@@ -4,6 +4,7 @@ import de.ab.delta203.bungee.AdvancedBanMain;
 import de.ab.delta203.bungee.files.ConfigYML;
 import de.ab.delta203.bungee.files.MessagesYML;
 import de.ab.delta203.bungee.mysql.modules.GetMySQl_Mute;
+import de.ab.delta203.bungee.mysql.modules.GetMySQl_PlayerHistory;
 import de.ab.delta203.bungee.mysql.modules.GetMySQl_PlayerInfo;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.CommandSender;
@@ -28,6 +29,7 @@ public class Command_UnMute extends Command {
 						if(sender instanceof ProxiedPlayer) senderName = ((ProxiedPlayer) sender).getName();
 						
 						GetMySQl_Mute.unmute(targetUUID);
+						GetMySQl_PlayerHistory.insert(targetUUID, senderName, "Unmute", "-", "-");
 						sender.sendMessage(AdvancedBanMain.prefix + MessagesYML.get().getString("unmute_success.sender").replace("%player%", args[0]));
 						if(ConfigYML.get().getBoolean("notify_mute")) {
 							for(ProxiedPlayer team : BungeeCord.getInstance().getPlayers()) {

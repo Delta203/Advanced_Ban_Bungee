@@ -2,6 +2,7 @@ package de.ab.delta203.bungee.listeners;
 
 import de.ab.delta203.bungee.files.MessagesYML;
 import de.ab.delta203.bungee.mysql.modules.GetMySQl_Ban;
+import de.ab.delta203.bungee.mysql.modules.GetMySQl_PlayerHistory;
 import net.md_5.bungee.api.event.LoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
@@ -29,6 +30,7 @@ public class Listener_Ban implements Listener {
 			}
 		}else {
 			GetMySQl_Ban.unban(uuid);
+			GetMySQl_PlayerHistory.insert(uuid, "Console", "Unban", "-", "-");
 		}
 		
 		if(GetMySQl_Ban.isBannedIP(ip)) {

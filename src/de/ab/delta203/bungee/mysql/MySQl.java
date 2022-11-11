@@ -54,12 +54,12 @@ public class MySQl {
 		if(isConnected()) {
 			try {
 				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_PlayerInfo (PlayerUUID VARCHAR(100),PlayerName VARCHAR(100),Server VARCHAR(100),LoginKey VARCHAR(100))").executeUpdate();
-				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_PlayerHistory (PlayerUUID VARCHAR(100),PlayerName VARCHAR(100),FromUUID VARCHAR(100),DateAndTime VARCHAR(100),Type VARCHAR(100),Reason VARCHAR(100),End VARCHAR(100))").executeUpdate();
+				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_PlayerHistory (PlayerUUID VARCHAR(100),PlayerName VARCHAR(100),FromUUID VARCHAR(100),DateAndTime VARCHAR(100),Type VARCHAR(100),Reason LONGTEXT,End VARCHAR(100))").executeUpdate();
 				
-				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Bans (PlayerUUID VARCHAR(100),PlayerIP VARCHAR(100),FromUUID VARCHAR(100),Reason VARCHAR(100),End VARCHAR(100))").executeUpdate();
-				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Mutes (PlayerUUID VARCHAR(100),FromUUID VARCHAR(100),Reason VARCHAR(100),End VARCHAR(100))").executeUpdate();
+				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Bans (PlayerUUID VARCHAR(100),PlayerIP VARCHAR(100),FromUUID VARCHAR(100),Reason LONGTEXT,End VARCHAR(100))").executeUpdate();
+				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Mutes (PlayerUUID VARCHAR(100),FromUUID VARCHAR(100),Reason LONGTEXT,End VARCHAR(100))").executeUpdate();
 				
-				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Reports (PlayerUUID VARCHAR(100),FromUUID VARCHAR(100),DateAndTime VARCHAR(100),CurrentMillis VARCHAR(100),Server VARCHAR(100),Reason VARCHAR(100))").executeUpdate();
+				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Reports (PlayerUUID VARCHAR(100),FromUUID VARCHAR(100),DateAndTime VARCHAR(100),CurrentMillis VARCHAR(100),Server VARCHAR(100),Reason LONGTEXT)").executeUpdate();
 				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_Chat (PlayerUUID VARCHAR(100),PlayerName VARCHAR(100),DateAndTime VARCHAR(100),CurrentMillis VARCHAR(100),Server VARCHAR(100),Message LONGTEXT)").executeUpdate();
 				
 				con.prepareStatement("CREATE TABLE IF NOT EXISTS AB_CommandQuery (SenderUUID VARCHAR(100),Command VARCHAR(1000))").executeUpdate();
