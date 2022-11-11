@@ -1,11 +1,11 @@
-###Changelog 1.0
+### Changelog 1.0
 - Webpanel wrong avatar image bugfix (line: 462)
 
-###Changelog 2.0
+### Changelog 2.0
 - Chatfilter contains to containsIgnoreCase (Listener_Chatlog, line: 31)
 - Version display in panel-footer (index.php, line 41)
 
-###Changelog 3.0
+### Changelog 3.0
 - MySQl table datatype bugfix (Reason LONGTEXT) [5 tables changed]
 - Logging unban and unmute in player history
 - Small webpanel navigation
