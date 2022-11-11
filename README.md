@@ -1,4 +1,4 @@
-#Advanced Ban the comprehensive system with ban, mute and report with chatlog!
+# Advanced Ban the comprehensive system with ban, mute and report with chatlog!
 
 The plugin will run on BungeeCord and minimum java version 8. It also requires MySQl and a webserver (eg. apache2)
 Make sure this plugin has been developed for English and German servers. The default configurations are in English.
